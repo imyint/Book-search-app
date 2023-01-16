@@ -1,0 +1,20 @@
+.booksearch__form{
+    padding-bottom: 1.5em;
+}
+
+.booksearch__input{
+    padding: 5px;
+    width: 150px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.booksearch__submit{
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 0 0 0.5em;
+    cursor: pointer;
+    background-color: #008cba;
+    color: white;
+}
