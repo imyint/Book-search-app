@@ -9,7 +9,6 @@ export default function SearchResults() {
 
   const addBook = (item, id) => {
     dispatch(allActions.wishlistActions.addWishlistItem(item, id));
-    // localStorage.setItem("wishlist", { item, id });
     console.log(localStorage);
   };
 
