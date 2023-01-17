@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../Actions";
 import "./Wishlist.css";

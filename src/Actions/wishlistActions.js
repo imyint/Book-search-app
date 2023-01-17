@@ -15,7 +15,9 @@ const removeWishlistItem = (id) => {
   };
 };
 
-export default {
+const wishlistActions = {
   addWishlistItem,
   removeWishlistItem,
 };
+
+export default wishlistActions;

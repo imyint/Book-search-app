@@ -28,7 +28,9 @@ const getBookResults = (bookTitle) => {
   };
 };
 
-export default {
+const bookSearchActions = {
   searchBook,
   getBookResults,
 };
+
+export default bookSearchActions;

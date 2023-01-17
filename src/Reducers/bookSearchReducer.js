@@ -7,7 +7,11 @@ export const initialBookState = {
 const bookSearch = (books = initialBookState, action) => {
   switch (action.type) {
     case "START_FETCHING_DATA":
-      return { ...books, dataLoading: true };
+      return {
+        ...books,
+        results: undefined,
+        dataLoading: true,
+      };
     case "SEARCH_BOOK":
       return {
         ...books,
@@ -16,7 +20,7 @@ const bookSearch = (books = initialBookState, action) => {
       };
     case "GET_BOOK_RESULTS":
       return {
-        input: "",
+        ...books,
         results: action.payload,
         dataLoading: false,
       };
