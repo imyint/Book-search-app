@@ -5,7 +5,11 @@
   align-items: center;
 }
 
-.wishlistItem {
+.wishlistItem__ul {
+  padding: 0;
+}
+
+.wishlistItem_li {
   list-style: none;
   display: flex;
   justify-content: space-between;

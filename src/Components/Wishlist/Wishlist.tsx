@@ -1,10 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../Actions";
+import { State } from "../../Types/types";
 import "./Wishlist.css";
-
-interface State {
-  wishlistItems: { title: string; id: string }[];
-}
 
 export default function Wishlist() {
   const wishlistItems = useSelector((state: State) => state.wishlistItems);
@@ -19,11 +16,11 @@ export default function Wishlist() {
       <h3 className="wishlist__header">
         My reading wishlist({wishlistItems.length})
       </h3>
-      <ul>
+      <ul className="wishlistItem__ul">
         {wishlistItems?.map((item: { title: string; id: string }) => {
           const { id, title } = item;
           return (
-            <li className="wishlistItem" key={id}>
+            <li className="wishlistItem_li" key={id}>
               <span>{title}</span>
               <button onClick={() => handleDelete(id)}>Delete</button>
             </li>

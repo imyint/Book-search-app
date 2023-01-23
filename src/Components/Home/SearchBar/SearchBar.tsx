@@ -7,7 +7,6 @@ import { State } from "../../../Types/types";
 
 export default function SearchBar() {
   const inputText = useSelector((state: State) => state.bookSearch.input);
-  const samp = useSelector((state: State) => state.bookSearch.results);
   const dispatch = useDispatch();
 
   const debouncedRequest = useCallback(
@@ -32,7 +31,6 @@ export default function SearchBar() {
     e.preventDefault();
     dispatch(allActions.bookSearchActions.getBookResults(inputText) as any);
     dispatch(allActions.bookSearchActions.searchBook(""));
-    console.log(samp);
   };
 
   return (

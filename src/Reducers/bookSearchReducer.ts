@@ -25,6 +25,7 @@ const bookSearch = (
           results: undefined,
         };
       }
+      break;
     case "GET_BOOK_RESULTS":
       if (typeof action.payload === "object") {
         return {
@@ -33,6 +34,7 @@ const bookSearch = (
           dataLoading: false,
         };
       }
+      break;
     default:
       return books;
   }

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import SearchResultItem from "./SearchResultItem/SearchResultItem";
-import { State } from "../../../Types/types";
+import { State, IVolumeInfo } from "../../../Types/types";
 
 export default function SearchResults() {
   const dataLoading = useSelector(
@@ -11,7 +11,7 @@ export default function SearchResults() {
   return (
     <div className="bookresults__div">
       {dataLoading && <h2>Loading...</h2>}
-      {bookResults?.map((result) => {
+      {bookResults?.map((result: IVolumeInfo) => {
         const { id, volumeInfo } = result;
         const imgSrc =
           typeof volumeInfo.imageLinks === "object"

@@ -13,6 +13,7 @@ const wishlistItems = (
           ? wishlistItems
           : [...wishlistItems, action.payload];
       }
+      break;
     case "REMOVE_WISHLIST_ITEM":
       return wishlistItems.filter((item) => item.id !== action.payload);
     default:
