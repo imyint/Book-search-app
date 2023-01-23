@@ -1,0 +1,6 @@
+.header__ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2em;
+}

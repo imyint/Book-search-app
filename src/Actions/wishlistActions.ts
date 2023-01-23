@@ -1,14 +1,19 @@
-const addWishlistItem = (item, id) => {
+import { ActionCreate, IWishlistState } from "../Types/types";
+
+const addWishlistItem = (
+  title: string,
+  id: string
+): ActionCreate<IWishlistState> => {
   return {
     type: "ADD_WISHLIST_ITEM",
     payload: {
-      title: item,
+      title: title,
       id: id,
     },
   };
 };
 
-const removeWishlistItem = (id) => {
+const removeWishlistItem = (id: string): ActionCreate<string> => {
   return {
     type: "REMOVE_WISHLIST_ITEM",
     payload: id,

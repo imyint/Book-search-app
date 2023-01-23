@@ -1,9 +1,15 @@
-.wishlistItem{
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2em;
-    padding-bottom: 0.75em;
+.wishlist__div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.wishlistItem {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+  padding-bottom: 0.75em;
+}

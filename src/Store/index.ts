@@ -2,8 +2,9 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "../Reducers";
 import { initialBookState } from "../Reducers/bookSearchReducer";
+import { State } from "../Types/types";
 
-const saveToLocalStorage = (state) => {
+const saveToLocalStorage = (state: State): void => {
   try {
     const serializedState = JSON.stringify(state);
     localStorage.setItem("persistedState", serializedState);
@@ -12,7 +13,7 @@ const saveToLocalStorage = (state) => {
   }
 };
 
-const loadFromLocalStorage = () => {
+const loadFromLocalStorage = (): State => {
   try {
     const serializedState = localStorage.getItem("persistedState");
     if (serializedState === null) return undefined;

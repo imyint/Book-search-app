@@ -1,17 +1,19 @@
 import { useSelector, useDispatch } from "react-redux";
 import _ from "lodash";
-import allActions from "../../Actions";
+import allActions from "../../../Actions";
 import "./SearchBar.css";
 import { useCallback, useEffect } from "react";
+import { State } from "../../../Types/types";
 
 export default function SearchBar() {
-  const inputText = useSelector((state) => state.bookSearch.input);
+  const inputText = useSelector((state: State) => state.bookSearch.input);
+  const samp = useSelector((state: State) => state.bookSearch.results);
   const dispatch = useDispatch();
 
   const debouncedRequest = useCallback(
-    _.debounce((inputText) => {
+    _.debounce((inputText: string) => {
       if (inputText.trim() !== "") {
-        dispatch(allActions.bookSearchActions.getBookResults(inputText));
+        dispatch(allActions.bookSearchActions.getBookResults(inputText) as any);
       }
     }, 400),
     []
@@ -21,14 +23,16 @@ export default function SearchBar() {
     debouncedRequest(inputText);
   }, [inputText]);
 
-  const handleChange = (e) => {
-    dispatch(allActions.bookSearchActions.searchBook(e.target.value));
+  const handleChange = (e: React.SyntheticEvent<EventTarget>): void => {
+    const eventInput = (e.target as HTMLInputElement).value;
+    dispatch(allActions.bookSearchActions.searchBook(eventInput));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.SyntheticEvent<EventTarget>): void => {
     e.preventDefault();
-    dispatch(allActions.bookSearchActions.getBookResults(inputText));
+    dispatch(allActions.bookSearchActions.getBookResults(inputText) as any);
     dispatch(allActions.bookSearchActions.searchBook(""));
+    console.log(samp);
   };
 
   return (

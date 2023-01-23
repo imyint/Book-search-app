@@ -1,9 +1,12 @@
 import { useSelector } from "react-redux";
 import SearchResultItem from "./SearchResultItem/SearchResultItem";
+import { State } from "../../../Types/types";
 
 export default function SearchResults() {
-  const dataLoading = useSelector((state) => state.bookSearch.dataLoading);
-  const bookResults = useSelector((state) => state.bookSearch.results);
+  const dataLoading = useSelector(
+    (state: State) => state.bookSearch.dataLoading
+  );
+  const bookResults = useSelector((state: State) => state.bookSearch.results);
 
   return (
     <div className="bookresults__div">

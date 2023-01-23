@@ -1,19 +1,27 @@
-import SearchBar from "./Components/SearchBar/SearchBar";
-import SearchResults from "./Components/SearchResults/SearchResults";
+import Header from "./Components/Header/Header";
+import Home from "./Components/Home/Home";
 import Wishlist from "./Components/Wishlist/Wishlist";
 import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <div className="books__div">
-        <SearchBar />
-        <SearchResults />
+    <Router>
+      <Header />
+      <div className="App">
+        <Switch>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/wishlist">
+            <Wishlist />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
       </div>
-      <div className="wishlist__div">
-        <Wishlist />
-      </div>
-    </div>
+    </Router>
   );
 }
 
