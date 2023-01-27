@@ -1,4 +1,4 @@
-import { ActionCreate, IVolumeInfo, IBookState } from "../Types/types";
+import { ActionCreate, IVolumeInfo, IBookState } from "../../Types/types";
 
 export const initialBookState: IBookState = {
   input: "",

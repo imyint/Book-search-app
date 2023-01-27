@@ -31,5 +31,6 @@ export interface IWishlistState {
 
 export interface State {
   bookSearch: IBookState;
-  wishlistItems: IWishlistState[];
+  wishlist: IWishlistState[];
+  // wishlist: IWishlistState[];
 }

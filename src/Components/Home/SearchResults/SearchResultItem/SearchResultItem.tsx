@@ -1,5 +1,5 @@
-import { useDispatch } from "react-redux";
-import allActions from "../../../../Actions";
+import { useAppDispatch } from "../../../../Rtk";
+import { addWishlistItem } from "../../../../Rtk/wishlistSlice";
 import { IVolumeInfo } from "../../../../Types/types";
 import "./SearchResultItem.css";
 
@@ -13,10 +13,10 @@ export default function SearchResultItem(props: Props) {
     volumeInfo: { title, authors, publisher, publishedDate, description },
     imgSrc,
   } = props;
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const addBook = (item: string, id: string): void => {
-    dispatch(allActions.wishlistActions.addWishlistItem(item, id));
+  const addBook = (title: string, id: string): void => {
+    dispatch(addWishlistItem({ title, id }));
   };
 
   return (

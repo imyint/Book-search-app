@@ -1,4 +1,4 @@
-import { ActionCreate, IVolumeInfo, IAPIResponseData } from "../Types/types";
+import { ActionCreate, IVolumeInfo, IAPIResponseData } from "../../Types/types";
 import { Dispatch } from "redux";
 
 const searchBook = (book: string): ActionCreate<string> => {

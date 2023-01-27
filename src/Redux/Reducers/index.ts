@@ -1,11 +1,12 @@
 import { combineReducers } from "redux";
 import bookSearch from "./bookSearchReducer";
-import wishlistItems from "./wishlistReducer";
-import { State } from "../Types/types";
+import wishlist from "./wishlistReducer";
+import { State } from "../../Types/types";
 
 const rootReducer = combineReducers<State>({
   bookSearch,
-  wishlistItems,
+  // wishlistItems,
+  wishlist,
 });
 
 export default rootReducer;

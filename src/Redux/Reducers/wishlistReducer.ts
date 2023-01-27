@@ -1,6 +1,6 @@
-import { ActionCreate, IWishlistState } from "../Types/types";
+import { ActionCreate, IWishlistState } from "../../Types/types";
 
-const wishlistItems = (
+const wishlist = (
   wishlistItems: IWishlistState[] = [],
   action: ActionCreate<IWishlistState | string>
 ): IWishlistState[] => {
@@ -21,4 +21,4 @@ const wishlistItems = (
   }
 };
 
-export default wishlistItems;
+export default wishlist;

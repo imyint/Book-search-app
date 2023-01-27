@@ -1,12 +1,14 @@
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../../Rtk";
 import SearchResultItem from "./SearchResultItem/SearchResultItem";
 import { State, IVolumeInfo } from "../../../Types/types";
 
 export default function SearchResults() {
-  const dataLoading = useSelector(
+  const dataLoading = useAppSelector(
     (state: State) => state.bookSearch.dataLoading
   );
-  const bookResults = useSelector((state: State) => state.bookSearch.results);
+  const bookResults = useAppSelector(
+    (state: State) => state.bookSearch.results
+  );
 
   return (
     <div className="bookresults__div">

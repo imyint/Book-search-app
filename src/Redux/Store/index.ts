@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "../Reducers";
 import { initialBookState } from "../Reducers/bookSearchReducer";
-import { State } from "../Types/types";
+import { State } from "../../Types/types";
 
 const saveToLocalStorage = (state: State): void => {
   try {
@@ -33,7 +33,7 @@ const store = createStore(
 store.subscribe(() =>
   saveToLocalStorage({
     bookSearch: initialBookState,
-    wishlistItems: store.getState().wishlistItems,
+    wishlist: store.getState().wishlist,
   })
 );
 

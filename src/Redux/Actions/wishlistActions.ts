@@ -1,4 +1,4 @@
-import { ActionCreate, IWishlistState } from "../Types/types";
+import { ActionCreate, IWishlistState } from "../../Types/types";
 
 const addWishlistItem = (
   title: string,
