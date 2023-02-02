@@ -13,10 +13,8 @@ export default function Login() {
   useEffect(() => {
     if (success) {
       history.push("/home");
-    } else {
-      console.log("bye");
     }
-  }, [userInfo, success]);
+  }, [success]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -30,7 +28,6 @@ export default function Login() {
     e: React.FormEvent<EventTarget | HTMLFormElement>
   ): void => {
     e.preventDefault();
-    console.log(userInfo);
     dispatch(loginUser(userInfo));
   };
 

@@ -48,6 +48,7 @@ export const userSlice = createSlice({
       localStorage.removeItem("userToken");
       state.userInfo = { username: "", password: "" };
       state.userToken = null;
+      state.success = false;
     },
   },
   extraReducers: (builder) => {

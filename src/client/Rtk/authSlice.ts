@@ -25,7 +25,6 @@ export const sendUserRegistration = createAsyncThunk(
       const data = res.json();
       return data;
     } catch (err) {
-      console.log(err);
       if (err.response && err.response.data.message) {
         return err.response.data.message;
       } else {
@@ -44,10 +43,9 @@ export const authSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder
-      .addCase(sendUserRegistration.fulfilled, (state) => {
-        state.success = true;
-      })
+    builder.addCase(sendUserRegistration.fulfilled, (state) => {
+      state.success = true;
+    });
   },
 });
 
