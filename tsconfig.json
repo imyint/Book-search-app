@@ -9,6 +9,6 @@
     "sourceMap": true,
     "jsx": "react-jsx"
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/server/index.js"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

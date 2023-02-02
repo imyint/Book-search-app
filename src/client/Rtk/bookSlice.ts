@@ -11,8 +11,7 @@ export const getBookResults = createAsyncThunk<IAPIResponseData, string>(
   "book/getBookResults",
   async (bookTitle) => {
     const bookParam = bookTitle.toLowerCase().split(" ").join("");
-    const URL = `https://www.googleapis.com/books/v1/volumes?q=${bookParam}&startIndex=0&maxResults=20`;
-    const res = await fetch(URL);
+    const res = await fetch(`http://localhost:4000/books?q=${bookParam}`);
     const data = res.json();
     return data;
   }
@@ -24,7 +23,6 @@ export const bookSlice = createSlice({
   reducers: {
     searchBook: (state, action) => {
       state.input = action.payload;
-      console.log(state);
     },
   },
   extraReducers: (builder) => {

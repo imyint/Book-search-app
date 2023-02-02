@@ -3,7 +3,9 @@ import bookSlice from "./bookSlice";
 import wishlistSlice from "./wishlistSlice";
 import { State } from "../Types/types";
 import { initialBookState } from "./bookSlice";
+import userSlice, { initialUserState } from "./userSlice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import authSlice, { initialAuthState } from "./authSlice";
 
 const saveToLocalStorage = (state: State): void => {
   try {
@@ -27,14 +29,18 @@ const loadFromLocalStorage = (): State => {
 
 export const store = configureStore({
   reducer: {
+    user: userSlice,
+    auth: authSlice,
     bookSearch: bookSlice,
     wishlist: wishlistSlice,
   },
-  preloadedState: loadFromLocalStorage(),
+  // preloadedState: loadFromLocalStorage(),
 });
 
 store.subscribe(() =>
   saveToLocalStorage({
+    user: initialUserState,
+    auth: initialAuthState,
     bookSearch: initialBookState,
     wishlist: store.getState().wishlist,
   })

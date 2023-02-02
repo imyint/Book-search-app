@@ -1,15 +1,15 @@
 import { useAppDispatch, useAppSelector } from "../../Rtk";
-import { removeWishlistItem } from "../../Rtk/wishlistSlice";
+import { deleteWishlistItem } from "../../Rtk/wishlistSlice";
 import { State } from "../../Types/types";
 import "./Wishlist.css";
 
 export default function Wishlist() {
   const wishlistItems = useAppSelector((state: State) => state.wishlist);
-  const dispatch = useAppDispatch();
-  console.log(wishlistItems);
 
-  const handleDelete = (id: string): void => {
-    dispatch(removeWishlistItem(id));
+  const dispatch = useAppDispatch();
+
+  const handleDelete = (id: string) => {
+    dispatch(deleteWishlistItem(id));
   };
 
   return (

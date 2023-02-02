@@ -30,7 +30,19 @@ export interface IWishlistState {
 }
 
 export interface State {
+  user: IAuthState;
+  auth: IAuthState;
   bookSearch: IBookState;
   wishlist: IWishlistState[];
-  // wishlist: IWishlistState[];
+}
+
+export interface IUserState {
+  username: string;
+  password: string;
+}
+
+export interface IAuthState {
+  userInfo: IUserState;
+  userToken: string;
+  success: boolean;
 }

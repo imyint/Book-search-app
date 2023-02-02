@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import rootReducer from "../Reducers";
+// import rootReducer from "../Reducers";
 import { initialBookState } from "../Reducers/bookSearchReducer";
 import { State } from "../../Types/types";
 
@@ -24,17 +24,17 @@ const loadFromLocalStorage = (): State => {
   }
 };
 
-const store = createStore(
-  rootReducer,
-  loadFromLocalStorage(),
-  applyMiddleware(thunk)
-);
+// const store = createStore(
+//   rootReducer,
+//   loadFromLocalStorage(),
+//   applyMiddleware(thunk)
+// );
 
-store.subscribe(() =>
-  saveToLocalStorage({
-    bookSearch: initialBookState,
-    wishlist: store.getState().wishlist,
-  })
-);
+// store.subscribe(() =>
+//   saveToLocalStorage({
+//     bookSearch: initialBookState,
+//     wishlist: store.getState().wishlist,
+//   })
+// );
 
-export default store;
+// export default store;
